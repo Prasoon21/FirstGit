@@ -1,113 +1,93 @@
-//EXAMINE THE DOCUMENT OBJECT
+//TRAVERSING tHE DOM
 
-//console.dir(document);
-// console.log(document.URL);
-// console.log(document.title);
+var itemList = document.querySelector('#items');
 
-// //document.title = 123;
-// console.log(document.doctype);
-// console.log(document.head);
-// console.log(document.body);
-// console.log(document.querySelectorAll);
-// console.log(document.forms[0]);
-// console.log(document.links);
+//parentNode property
 
-// console.log(document.images);
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor = '#f4f4f4';
+// console.log(itemList.parentNode.parentNode.parentNode);
 
+//parentElement
+// console.log(itemList.parentElement);
+// itemList.parentNode.style.backgroundColor = '#f4f4f4';
+// console.log(itemList.parentElement.parentElement.parentElement);
 
-//GET ELEMENT BY ID
-//console.log(document.getElementById('header-title'));
+// childNodes
 
-// var headerTitle = document.getElementById('header-title');
-// var header = document.getElementById('main-header');
+//console.log(itemList.childNodes);
 
-//console.log(headerTitle);
-// headerTitle.textContent = 'Hello Brother';
-// headerTitle.innerText = 'Bonjour';
-// headerTitle.innerHTML = '<h3>Hellopepe</h3>';
-//header.style.borderBottom = 'solid 3px #000';
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
 
-//GETELEMENTSBYCLASSNAME
+// itemList.children[1].style.backgroundColor='pink';
 
-// var items = document.getElementsByClassName('list-group-item');
-// console.log(items);
-// console.log(items[1]);
-// items[1].textContent = 'bye bye';
-// items[1].style.fontWeight = 'bold';
-// items[1].style.backgroundColor = 'yellow';
-// items[2].style.backgroundColor = 'green';
+// //firstChild
 
-// for(var i=0;i<items.length;i++){
-//     items[i].style.fontWeight = 'bold';
-// }
+// console.log(itemList.firstChild);
+// //firstElementChild
 
-//GETELEMENTSBYTAGNAME
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = 'dhol';
 
-// var li = document.getElementsByTagName('li');
-// console.log(li);
-// console.log(li[1]);
-// li[1].textContent = 'bye bye';
-// li[1].style.fontWeight = 'bold';
-// li[1].style.backgroundColor = 'yellow';
-// li[2].style.backgroundColor = 'green';
+//lastChild
 
-// for(var i=0;i<li.length;i++){
-//     li[i].style.fontWeight = 'bold';
-// }
+// console.log(itemList.lastChild);
+// //lastElementChild
 
-// var li = document.getElementsByClassName('new-list');
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent = 'dhol';
 
-// console.log(li);
-// li[0].style.backgroundColor = 'blue';
+// nextSibling
+// console.log(itemList.nextSibling);
+// // nextElementSibling
+// console.log(itemList.nextElementSibling);
 
-// var li = document.getElementsByTagName('li');
+//previousSibling
+// console.log(itemList.previousSibling);
+// //previousElementSibling
+// console.log(itemList.previousElementSibling);
 
-// console.log(li);
-// for(var j=0;j<li.length;j++){
-//     li[j].style.backgroundColor = 'blue';
-// }
+// itemList.previousElementSibling.style.color = 'green';
 
+//createElement
 
+//create a div
+var newDiv = document.createElement('div');
+var newDiv2 = document.createElement('divi')
 
-// QUERYSELECTOR
+//add class
+newDiv.className = 'hello';
+newDiv2.className = 'byeee';
+//add id
+newDiv.id = 'helll1';
 
-// var header = document.querySelector('#main-header');
-// header.style.borderBottom = 'solid 4px #ccc';
+//add attribute
+newDiv.setAttribute('title', 'hello div');
 
-// var input = document.querySelector('input');
-// input.value = 'hello world';
+//create text node
+var newDivText = document.createTextNode('hello jimmy');
+var newDiv2Text = document.createTextNode('to kaise hai aap');
 
-// var submit = document.querySelector('input[type="submit"]');
-// submit.value = "SEND";
+//add text to div
+newDiv.appendChild(newDivText);
+newDiv2.appendChild(newDiv2Text);
 
-// var item = document.querySelector('.list-group-item');
-// item.style.color = 'red';
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+var kardiya = document.querySelector('ul .list-group-item');
+var liii = document.querySelector('ul li');
 
-// var lastItem = document.querySelector('.list-group-item:last-child');
-// lastItem.style.color='blue';
+console.log(newDiv2);
 
-// var secondItem = document.querySelector('.list-group-item:nth-child(2)');
-// secondItem.style.backgroundColor='green';
+newDiv.style.fontSize = '30px';
 
-// var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
-// thirdItem.style.visibility = 'hidden';
+container.insertBefore(newDiv, h1);
+kardiya.insertBefore(newDiv2, liii);
 
 
-//QUERYSELECTORALL
-// var titles = document.querySelectorAll('.title');
-// console.log(titles);
 
-// titles[1].textContent = 'gone';
 
-var odd = document.querySelectorAll('li:nth-child(odd)');
-// var even = document.querySelectorAll('li:nth-child(even)');
 
- for(var i=0;i<odd.length;i++){
-     odd[i].style.backgroundColor = 'green';
-//     even[i].style.backgroundColor = '#ccc';
- }
-
-var items = document.querySelectorAll('.list-group-item');
-items[1].style.color = 'green';
 
 
