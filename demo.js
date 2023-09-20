@@ -18,6 +18,9 @@ function addItem(e){
     var itemDescription = document.getElementById('description').value;
     var mybr = document.createElement('br');
 
+    localStorage.setItem(newItem,itemDescription);
+    
+
     // Create new li element
     var li = document.createElement('li');
     //Add class
