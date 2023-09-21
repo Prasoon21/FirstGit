@@ -6,7 +6,7 @@ var filter = document.getElementById('filter');
 form.addEventListener('submit', addItem);
 // Delete event
 itemList.addEventListener('click', removeItem);
-//itemList.addEventListener('click', removeFromLocal);
+
 // Filter Event
 filter.addEventListener('keyup', filterItems);
 
@@ -49,7 +49,7 @@ function addItem(e){
 
     //append text node
     deleteButton.appendChild(document.createTextNode('X'));
-    editBtn.appendChild(document.createTextNode('edit'));
+    editBtn.appendChild(document.createTextNode('EDIT'));
 
     //append button to li
     li.appendChild(deleteButton);
@@ -71,6 +71,7 @@ function removeItem(e){
             
         }
     }
+    
 }
 
 
