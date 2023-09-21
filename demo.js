@@ -6,6 +6,7 @@ var filter = document.getElementById('filter');
 form.addEventListener('submit', addItem);
 // Delete event
 itemList.addEventListener('click', removeItem);
+//itemList.addEventListener('click', removeFromLocal);
 // Filter Event
 filter.addEventListener('keyup', filterItems);
 
@@ -18,7 +19,7 @@ function addItem(e){
     var itemDescription = document.getElementById('description').value;
     var mybr = document.createElement('br');
 
-    const myObj = {
+    var myObj = {
         newItem: newItem,
         itemDescription: itemDescription
     };
@@ -62,13 +63,18 @@ function addItem(e){
 
 // Remove item
 function removeItem(e){
+
     if(e.target.classList.contains('delete')){
         if(confirm('Are You Sure?')){
-            var li = e.target.parentElement;
+            var li = e.target.parentElement;       
             itemList.removeChild(li);
+            
         }
     }
 }
+
+
+
 
 // filter items
 function filterItems(e){
