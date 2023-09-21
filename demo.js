@@ -21,9 +21,9 @@ function addItem(e){
     const myObj = {
         newItem: newItem,
         itemDescription: itemDescription
-    }
+    };
 
-    localStorage.setItem('itemDetails',JSON.stringify(myObj));
+    localStorage.setItem(myObj.newItem,JSON.stringify(myObj));
     
     
     
