@@ -18,7 +18,14 @@ function addItem(e){
     var itemDescription = document.getElementById('description').value;
     var mybr = document.createElement('br');
 
-    localStorage.setItem(newItem,itemDescription);
+    const myObj = {
+        newItem: newItem,
+        itemDescription: itemDescription
+    }
+
+    localStorage.setItem('itemDetails',JSON.stringify(myObj));
+    
+    
     
 
     // Create new li element
@@ -50,8 +57,7 @@ function addItem(e){
     itemList.appendChild(li);
 
     form.reset();
-    // newItem.value = '';
-    // itemDescription.value = '';
+    
 }
 
 // Remove item
